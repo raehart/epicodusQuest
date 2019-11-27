@@ -11,37 +11,18 @@
     <title>Places Ive Been </title>
 </head>
 <body>
-<h1 class="places__title container text-center"> Places I've Been </h1>
-<!--list of bootsrrap accordions looping over places ive been  - use function to append to dom -->
+<div class="places__wrapper container">
+
+    <h1 class="places__title text-center"> Places I've Been </h1>
+    <!--list of bootsrrap accordions looping over places ive been  - use function to append to dom -->
 
 
-<div class="places__accordion" id="accordion">
+    <div class="places__accordion" id="accordion">
 
-    <div class="places__card card">
-        <div class="places__card--header" id="headingOne">
-            <h5>
-                <button class="btn btn-link collapsed text-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
-                aria-controls="collapseOne">
-                    Location #1
-                </button>
-            </h5>
-        </div>
 
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-                <ul class="places__card--list">
-                    <li class="text-success"> Visited: Fall 2019 </li>
-                    <li class="text-info"> Highlights: Landmark A, Landmark B, Lanmark C</li>
-                    <li class="text-warning"> Notes: Cupcake icing wafer ice cream. Jelly-o gingerbread cupcake tiramisu powder croissant pudding carrot cake. </li>
-                </ul>
-            </div>
-        </div>
     </div>
 
 </div>
-
-
-
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -52,6 +33,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="data/demo-locations.js"></script>
 <script src="scripts.js"></script>
 </body>
 </html>
