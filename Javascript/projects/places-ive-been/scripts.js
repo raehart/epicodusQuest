@@ -42,6 +42,7 @@ const lassen = new Location('Lassen National Forest', '2004', ['Lassen National 
 const newYork = new Location('New York City', '2006', ['Broadway', 'Grants Tomb', 'Grand Central Station', 'Brooklyn Bridge', 'Times Square', 'FAO Schwartz'], 'spring', 'Best pie every');
 const davis = new Location('Davis', '2019', ['UC Davis', 'farmers market', 'tomato statue'], 'fall', 'Its a biketown :)');
 const reno = new Location('Reno', '1995', ['Biggest little city in the world sign'], 'fall', 'Biggest little city in the world');
+const parkCity = new Location('Park City', '2019', ['Flagans on Main', 'Westgate Resort', 'Webber River'], 'Summer', 'Lots of cool natural rock formations, including devils staircase');
 
 
 myLocations.addLocation(dc);
@@ -56,7 +57,21 @@ myLocations.addLocation(lassen);
 myLocations.addLocation(newYork);
 myLocations.addLocation(davis);
 myLocations.addLocation(reno);
+myLocations.addLocation(parkCity);
 
 console.log(myLocations);
+console.log(myLocations.locations);
+console.log(myLocations.locations.length);
 
-//loop over data and append to dom
+// for(location in myLocations.locations) {
+//     console.log(location.name);
+// }
+
+$(".places__accordion").append('<div class="places__card card"> \n' + '<div class="places__card--header" id="headingIndex"> \n'
+    + ' <h5> \n' + '  <button class="btn btn-link collapsed text-primary" data-toggle="collapse" data-target="#collapseIndex" aria-expanded="false"\n' +
+    'aria-controls="collapseIndex"> \n' + 'Location Name \n' + '</button> \n' + '  </h5> \n' + '</div> \n'
+    + '<div id="collapseIndex" class="collapse" aria-labelledby="headingIndex" data-parent="#accordion"> \n' +
+    '<div class="card-body">\n' + '  <ul class="places__card--list"> \n' + '<li class="text-success"> Visited: Location Season Location Year </li> \n' +
+    ' <li class="text-info"> Highlights: Location Landmarks </li> \n' + '<li class="text-warning"> Notes: Location Notes </li> \n' + '</ul> \n'
+    + '</div> \n' + ' </div> \n' + '</div>'
+);

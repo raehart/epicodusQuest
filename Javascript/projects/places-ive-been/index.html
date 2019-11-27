@@ -8,36 +8,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="scss/main.css">
-    <title>Document</title>
+    <title>Places Ive Been </title>
 </head>
 <body>
 <h1 class="places__title container text-center"> Places I've Been </h1>
 <!--list of bootsrrap accordions looping over places ive been  - use function to append to dom -->
 
-<div id="accordion">
+
+<div class="places__accordion" id="accordion">
+
     <div class="places__card card">
         <div class="places__card--header" id="headingOne">
             <h5>
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                <button class="btn btn-link collapsed text-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
                 aria-controls="collapseOne">
                     Location #1
                 </button>
             </h5>
         </div>
 
-        <div id="collapseOne" class="collapsed" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-                <ul>
-                    <li> Season Visited Year Visited</li>
-                    <li> Landmarks Seen</li>
-                    <li> Notes </li>
+                <ul class="places__card--list">
+                    <li class="text-success"> Visited: Fall 2019 </li>
+                    <li class="text-info"> Highlights: Landmark A, Landmark B, Lanmark C</li>
+                    <li class="text-warning"> Notes: Cupcake icing wafer ice cream. Jelly-o gingerbread cupcake tiramisu powder croissant pudding carrot cake. </li>
                 </ul>
             </div>
         </div>
     </div>
+
 </div>
 
-<!--Add location button-->
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
