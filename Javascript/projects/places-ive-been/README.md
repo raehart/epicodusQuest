@@ -8,7 +8,13 @@
 "
 
 Example Input:
-
+Location Constructor takes the following inputs:
+*Location,
+*Landmarks
+*Year Visited
+*Time of year
+*Notes 
 
 Example Output: 
-
+An accordion that displays the Location name when closed,
+and the details underneath when expanded. 
