@@ -1,0 +1,32 @@
+.places__title {
+  color: purple;
+  font-family: Lobster;
+  font-size: 45px;
+  margin-bottom: 40px;
+}
+
+.places__accordion {
+  li {
+    list-style: none;
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+
+  h5 > button.btn-link {
+    font-size: 30px;
+  }
+}
+
+.places__location--title,
+.places__location--title:hover {
+  font-family: Lobster;
+  color: lightseagreen;
+  background: #D8D8D8;
+  width: 100%;
+}
+
+.places__location--body {
+  background: lightseagreen;
+  font-family: cabin;
+  color: white;
+}
