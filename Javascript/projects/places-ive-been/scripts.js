@@ -20,23 +20,22 @@ function Location({name, year, landmarks, season, notes}) {
 
 Location.prototype.renderLocationCard = function() {
     const randomNum = (""+Math.random()).substring(2,7);
-    console.log(randomNum)
   return `
     <div class="places__card card">
-      <div class="places__card--header" id="headingOne">
+      <div class="places__card--header" id="heading-${randomNum}">
         <h5>
-          <button class="btn btn-link collapsed text-primary" data-toggle="collapse"
+          <button class="places__location--title btn btn-link collapsed" data-toggle="collapse"
             data-target="#collapse-${randomNum}" aria-expanded="false" aria-controls="collapse-${randomNum}">
             ${this.name}
           </button>
         </h5>
       </div>
-      <div id="collapse-${randomNum}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
+      <div id="collapse-${randomNum}" class="collapse" aria-labelledby="heading-${randomNum}" data-parent="#accordion">
+        <div class="places__location--body card-body">
           <ul class="places__card--list">
-            <li class="text-success"> Visited: ${this.season} ${this.year} </li>
-            <li class="text-info"> Highlights: ${this.landmarks.join(', ')}</li>
-            <li class="text-warning"> Notes: ${this.notes} </li>
+            <li class="places__location--detail places__location--visited"> Visited: ${this.season} ${this.year} </li>
+            <li class="places__location--detail places__location--landmarks"> Highlights: ${this.landmarks.join(', ')}</li>
+            <li class="places__location--detail places__location--notes"> Notes: ${this.notes} </li>
           </ul>
         </div>
       </div>
@@ -44,12 +43,13 @@ Location.prototype.renderLocationCard = function() {
   `;
 };
 
-// Arrow function generates error re initialized array @TODO: Debug
+// Arrow function generates error re initialized array //TODO: Debug
 // LocationList.prototype.addLocation = (location) => {
 //     this.locations.push(location)
 // };
 
 LocationList.prototype.addLocation = function(locationData) {
+    console.log(locationData);
   this.locations.push(new Location(locationData));
 };
 
@@ -57,16 +57,15 @@ LocationList.prototype.addLocations = function(locationDataList) {
   for(let locationData of locationDataList) {
     myLocations.addLocation(locationData);
   }
+  console.log(locationDataList);
 };
 
 // Implementation Logic
-
 let myLocations = new LocationList();
 myLocations.addLocations(locations);
+console.log(myLocations.locations);
 
 
 for( const location of myLocations.locations) {
-  console.log(location);
-  console.log(location.name);
   $(".places__accordion").append(location.renderLocationCard());
 }
